@@ -2,300 +2,282 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="RAG Engine - Próximamente">
-  <!-- Background Effects -->
+<Layout title="RAG Engine - IA para tu negocio">
   <div class="fixed inset-0 bg-grid-pattern pointer-events-none"></div>
-  <div class="fixed inset-0 bg-dots-pattern pointer-events-none opacity-50"></div>
-  
-  <!-- Gradient Orbs -->
-  <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] pointer-events-none"></div>
-  <div class="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-accent-purple/10 rounded-full blur-[150px] pointer-events-none"></div>
+  <div class="fixed inset-0 bg-dots-pattern pointer-events-none opacity-30"></div>
 
-  <!-- Navigation -->
-  <nav class="relative z-10 flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+  <nav class="relative z-50 flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-accent-purple flex items-center justify-center">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
         </svg>
       </div>
-      <span class="text-xl font-bold font-[Outfit]">RAG Engine</span>
+      <span class="text-xl font-bold">RAG Engine</span>
     </div>
-    <a href="#waitlist" class="px-5 py-2.5 rounded-full border border-border text-sm font-medium hover:bg-white/5 transition-all">
-      Únete a la lista
-    </a>
+    <div class="flex items-center gap-4">
+      <a href="#features" class="text-gray-400 hover:text-white text-sm">Features</a>
+      <a href="#use-cases" class="text-gray-400 hover:text-white text-sm">Casos</a>
+      <a href="#pricing" class="text-gray-400 hover:text-white text-sm">Precios</a>
+      <a href="#waitlist" class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
+        Empezar
+      </a>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
   <main class="relative z-10">
-    <!-- Hero -->
-    <section class="px-8 py-24 max-w-6xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
-        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-        <span class="text-sm text-text-secondary">Próximamente en 2026</span>
-      </div>
-      
-      <h1 class="text-5xl md:text-7xl font-bold font-[Outfit] mb-6 leading-tight">
-        Potencia tus aplicaciones
-        <span class="text-gradient block mt-2">con Inteligencia Artificial</span>
-      </h1>
-      
-      <p class="text-xl text-text-secondary max-w-2xl mx-auto mb-12">
-        Construye chatbots inteligentes, sistemas de búsqueda semántica y asistentes IA que entienden contexto. 
-        La próxima generación de RAG está chegando.
-      </p>
+    <section class="px-6 py-20 max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 mb-6">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <span class="text-sm text-gray-400">Ahora con embeddings ultra-rapidos</span>
+          </div>
+          
+          <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Tu IA conoce
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 block">tu negocio</span>
+          </h1>
+          
+          <p class="text-lg text-gray-400 max-w-xl mb-8">
+            Chatbot que sabe de tus productos, documentos y empresa.
+            En minutos. Por API REST. Costos bajos.
+          </p>
 
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#waitlist" class="glow-button px-8 py-4 rounded-full text-white font-semibold text-lg">
-          Únete a la Lista de Espera
-        </a>
-        <a href="#features" class="px-8 py-4 rounded-full border border-border hover:bg-white/5 transition-all text-lg font-medium">
-          Ver características
-        </a>
-      </div>
+          <div class="flex gap-4 mb-10">
+            <a href="#waitlist" class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold">
+              Crear mi chatbot
+            </a>
+          </div>
 
-      <!-- Floating Cards Preview -->
-      <div class="mt-24 relative h-[300px] max-w-4xl mx-auto">
-        <div class="absolute left-0 top-10 glass-card rounded-2xl p-6 w-72 animate-float">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
-              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
-              </svg>
-            </div>
+          <div class="flex gap-8">
             <div>
-              <div class="text-sm font-medium">Chatbot IA</div>
-              <div class="text-xs text-text-muted">Respondiendo...</div>
+              <div class="text-2xl font-bold" id="interested-count">99+</div>
+              <div class="text-gray-500 text-sm">Empresas</div>
             </div>
-          </div>
-          <div class="h-2 bg-border rounded-full overflow-hidden">
-            <div class="h-full w-3/4 bg-gradient-to-r from-accent to-accent-cyan rounded-full"></div>
-          </div>
-        </div>
-
-        <div class="absolute right-0 top-0 glass-card rounded-2xl p-6 w-80 animate-float-delay">
-          <div class="flex items-center justify-between mb-4">
-            <div class="text-sm font-medium">Búsqueda Semántica</div>
-            <div class="px-2 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs">98% accuracy</div>
-          </div>
-          <div class="space-y-2">
-            <div class="h-3 bg-border/50 rounded w-full"></div>
-            <div class="h-3 bg-border/50 rounded w-4/5"></div>
-            <div class="h-3 bg-border/50 rounded w-3/5"></div>
-          </div>
-          <div class="mt-4 pt-4 border-t border-border">
-            <div class="flex items-center gap-2">
-              <div class="w-6 h-6 rounded-full bg-accent-purple/30"></div>
-              <div class="text-xs text-text-secondary">Documentos relevantes encontrados</div>
+            <div class="w-px bg-gray-700"></div>
+            <div>
+              <div class="text-2xl font-bold">$9</div>
+              <div class="text-gray-500 text-sm">/mes starter</div>
+            </div>
+            <div class="w-px bg-gray-700"></div>
+            <div>
+              <div class="text-2xl font-bold">&lt;100ms</div>
+              <div class="text-gray-500 text-sm">latencia</div>
             </div>
           </div>
         </div>
 
-        <div class="absolute left-1/2 -translate-x-1/2 top-20 glass-card rounded-2xl p-5 w-64 animate-pulse-slow border-accent/30">
-          <div class="flex items-center gap-2 mb-3">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent flex items-center justify-center">
-              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-              </svg>
+        <div class="bg-gray-800/50 rounded-2xl p-1 border border-gray-700">
+          <div class="bg-gray-900 rounded-xl">
+            <div class="px-5 py-4 border-b border-gray-700 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-medium">Asistente ZapatillasPro</div>
+                  <div class="text-xs text-gray-500 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                    Online
+                  </div>
+                </div>
+              </div>
+              <div class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs">
+                E-commerce
+              </div>
             </div>
-            <div class="text-sm font-medium">Embedding en tiempo real</div>
-          </div>
-          <div class="grid grid-cols-5 gap-1">
-            {Array(15).fill(0).map(() => (
-              <div class="h-2 rounded-sm bg-accent/30 animate-pulse"></div>
-            ))}
+            
+            <div class="p-4 space-y-4 h-80 overflow-y-auto">
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex-shrink-0"></div>
+                <div class="bg-gray-800 rounded-xl px-4 py-3 max-w-[85%]">
+                  <p class="text-sm">Hola. Soy el asistente de ZapatillasPro. En que puedo ayudarte?</p>
+                </div>
+              </div>
+
+              <div class="flex justify-end">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl px-4 py-3 max-w-[85%]">
+                  <p class="text-sm text-white">Estas zapatillas son resistentes al agua?</p>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex-shrink-0"></div>
+                <div class="bg-gray-800 rounded-xl px-4 py-3 max-w-[85%]">
+                  <p class="text-sm">Buena pregunta. Las Nike Air Max tienen mesh transpirable - no impermeable. No recomendadas para lluvia. Quieres ver modelos waterproof?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 border-t border-gray-700">
+              <div class="flex gap-3">
+                <input 
+                  type="text" 
+                  placeholder="Escribe tu pregunta..."
+                  class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                />
+                <button class="px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="px-8 py-24 max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold font-[Outfit] mb-4">
-          Todo lo que necesitas para <span class="text-gradient">IA avanzada</span>
-        </h2>
-        <p class="text-text-secondary text-lg max-w-xl mx-auto">
-          Herramientas potentes diseñadas para desarrolladores que buscan lo mejor
-        </p>
+    <section id="use-cases" class="px-6 py-20 bg-gray-800/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">
+            Un proyecto. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Un mundo de posibilidades.</span>
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">E-commerce</h3>
+            <p class="text-gray-400 mb-4">
+              Tu chatbot sabe todos tus productos, precios, tallas. Responde "tiene en talla 42?", "vienen con garantia?".
+            </p>
+          </div>
+
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Legal</h3>
+            <p class="text-gray-400 mb-4">
+              Contratos, terminos, politicas. Tu IA responde "que dice la clausula 4?", "cual es la politica de devolucion?".
+            </p>
+          </div>
+
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+            <div class="w-14 h-14 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Empresa</h3>
+            <p class="text-gray-400 mb-4">
+              Conoce tu empresa, servicios, horarios. "Cuales son los horarios?", "tienen servicio tecnico?".
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="px-6 py-20 max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Todo lo que necesitas.</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Búsqueda Semántica</h3>
-          <p class="text-text-secondary">
-            Encuentra exactamente lo que buscas con embeddings de última generación y búsqueda vectorial híbrida.
-          </p>
+        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+          <h3 class="font-semibold mb-2">Multi-fuente</h3>
+          <p class="text-sm text-gray-400">PDFs, URLs, texto, APIs.</p>
         </div>
-
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-cyan/20 to-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Multi-fuente de Datos</h3>
-          <p class="text-text-secondary">
-            Conecta PDFs, páginas web, bases de datos y más. Ingieren contenido de cualquier fuente automáticamente.
-          </p>
+        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+          <h3 class="font-semibold mb-2">Embeddings</h3>
+          <p class="text-sm text-gray-400">Busqueda semantica.</p>
         </div>
-
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">API RESTful</h3>
-          <p class="text-text-secondary">
-            Integración simple con cualquier stack. Endpoints poderosos para chatear, buscar y gestionar documentos.
-          </p>
-        </div>
-
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-accent-cyan/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Seguridad Enterprise</h3>
-          <p class="text-text-secondary">
-            Autenticación, encryption y control de acceso. Tus datos están seguros con estándares SOC2.
-          </p>
-        </div>
-
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Respuestas en Tiempo Real</h3>
-          <p class="text-text-secondary">
-            Latencia ultra-baja con cacheo inteligente. Tus usuarios obtienen respuestas instantáneas.
-          </p>
-        </div>
-
-        <div class="glass-card rounded-2xl p-8 hover:bg-bg-card-hover transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500/20 to-accent-purple/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-7 h-7 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-3">Analytics Avanzado</h3>
-          <p class="text-text-secondary">
-            Métricas detalladas de uso, costos y performance. Optimiza tu aplicación con data real.
-          </p>
+        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+          <h3 class="font-semibold mb-2">Aislamiento</h3>
+          <p class="text-sm text-gray-400">Datos aislados por proyecto.</p>
         </div>
       </div>
     </section>
 
-    <!-- How it works -->
-    <section class="px-8 py-24 max-w-6xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold font-[Outfit] mb-4">
-          ¿Cómo funciona?
-        </h2>
-        <p class="text-text-secondary text-lg max-w-xl mx-auto">
-          En solo 3 pasos puedes tener tu sistema RAG funcionando
-        </p>
-      </div>
+    <section id="pricing" class="px-6 py-20 bg-gray-800/30">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Precios que funcionan</h2>
+          <p class="text-gray-400">Desde $9/mes.</p>
+        </div>
 
-      <div class="grid md:grid-cols-3 gap-8 relative">
-        <div class="relative">
-          <div class="glass-card rounded-2xl p-8 text-center h-full">
-            <div class="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-accent">1</div>
-            <h3 class="text-xl font-semibold mb-3">Sube tus documentos</h3>
-            <p class="text-text-secondary">Arrastra PDFs, URLs o conecta tu base de datos. Nosotros manejaremos la ingestion.</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+            <h3 class="text-xl font-semibold mb-2">Starter</h3>
+            <div class="mb-6"><span class="text-4xl font-bold">$9</span><span class="text-gray-500">/mes</span></div>
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-center gap-2 text-gray-400">1 proyecto</li>
+              <li class="flex items-center gap-2 text-gray-400">1,000 msgs/mes</li>
+            </ul>
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-gray-600">Empezar</a>
           </div>
-        </div>
-        <div class="relative">
-          <div class="glass-card rounded-2xl p-8 text-center h-full">
-            <div class="w-16 h-16 rounded-2xl bg-accent-purple/20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-accent-purple">2</div>
-            <h3 class="text-xl font-semibold mb-3">Procesamos con IA</h3>
-            <p class="text-text-secondary">Nuestros embeddings y chunking inteligente organizan tu conocimiento.</p>
+
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-blue-500/30 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-sm">Popular</div>
+            <h3 class="text-xl font-semibold mb-2">Pro</h3>
+            <div class="mb-6"><span class="text-4xl font-bold">$29</span><span class="text-gray-500">/mes</span></div>
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-center gap-2 text-gray-400">5 proyectos</li>
+              <li class="flex items-center gap-2 text-gray-400">10,000 msgs/mes</li>
+            </ul>
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white">Empezar</a>
           </div>
-        </div>
-        <div class="relative">
-          <div class="glass-card rounded-2xl p-8 text-center h-full">
-            <div class="w-16 h-16 rounded-2xl bg-accent-cyan/20 flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-accent-cyan">3</div>
-            <h3 class="text-xl font-semibold mb-3">Chatea con tu data</h3>
-            <p class="text-text-secondary">Usa nuestra API o Dashboard para hacer preguntas y obtener respuestas contextuales.</p>
+
+          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+            <h3 class="text-xl font-semibold mb-2">Business</h3>
+            <div class="mb-6"><span class="text-4xl font-bold">$99</span><span class="text-gray-500">/mes</span></div>
+            <ul class="space-y-3 mb-8 text-sm">
+              <li class="flex items-center gap-2 text-gray-400">Proyectos ilimitados</li>
+              <li class="flex items-center gap-2 text-gray-400">100,000 msgs/mes</li>
+            </ul>
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-gray-600">Contactar</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Waitlist Section -->
-    <section id="waitlist" class="px-8 py-24 max-w-4xl mx-auto">
-      <div class="glass-card rounded-3xl p-12 text-center relative overflow-hidden">
-        <!-- Background glow -->
-        <div class="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent-purple/5"></div>
+    <section id="waitlist" class="px-6 py-24 max-w-4xl mx-auto">
+      <div class="bg-gray-800/50 rounded-3xl p-12 text-center border border-gray-700">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm mb-8">
+          Lanzamiento Q1 2026
+        </div>
+
+        <h2 class="text-5xl font-bold mb-4">Listo para empezar?</h2>
         
-        <div class="relative z-10">
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent text-sm font-medium mb-8">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path>
-            </svg>
-            Sé el primero en enterarte
-          </div>
+        <p class="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
+          Los primeros 100 get free lifetime access.
+        </p>
 
-          <h2 class="text-4xl md:text-5xl font-bold font-[Outfit] mb-4">
-            Únete a la <span class="text-gradient">Lista de Espera</span>
-          </h2>
-          
-          <p class="text-text-secondary text-lg mb-10 max-w-lg mx-auto">
-            Sorteamos 100 cuentas gratuitas para los primeros en unirse. 
-            Ingresa tu email y te avisaremos cuando lancemos.
-          </p>
+        <form id="waitlist-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+          <input 
+            type="email" 
+            name="email"
+            placeholder="tu@email.com" 
+            required
+            class="flex-1 px-6 py-4 rounded-full bg-gray-900 border border-gray-700 focus:border-blue-500 focus:outline-none text-lg"
+          />
+          <button 
+            type="submit"
+            class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold text-lg"
+          >
+            Unirse Gratis
+          </button>
+        </form>
 
-          <form id="waitlist-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input 
-              type="email" 
-              name="email"
-              placeholder="tu@email.com" 
-              required
-              class="flex-1 px-6 py-4 rounded-full bg-bg-primary border border-border focus:border-accent focus:outline-none transition-all text-lg placeholder:text-text-muted"
-            />
-            <button 
-              type="submit"
-              class="glow-button px-8 py-4 rounded-full text-white font-semibold text-lg whitespace-nowrap"
-            >
-              Unirse Ahora
-            </button>
-          </form>
-
-          <div id="form-message" class="mt-6 text-sm hidden"></div>
-
-          <p class="text-text-muted text-sm mt-8">
-            No spam. Solo te contactaremos cuando lancemos.
-          </p>
-
-          <div class="flex items-center justify-center gap-8 mt-10">
-            <div class="text-center">
-              <div id="interested-count" class="text-3xl font-bold text-gradient">99+</div>
-              <div class="text-text-muted text-sm">Interesados</div>
-            </div>
-            <div class="w-px h-12 bg-border"></div>
-            <div class="text-center">
-              <div class="text-3xl font-bold text-gradient">Q1 2026</div>
-              <div class="text-text-muted text-sm">Lanzamiento</div>
-            </div>
-          </div>
-        </div>
+        <div id="form-message" class="mt-6 text-sm hidden"></div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="px-8 py-12 border-t border-border">
-      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer class="px-6 py-12 border-t border-gray-800">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-purple flex items-center justify-center">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
@@ -303,79 +285,58 @@ import Layout from '../layouts/Layout.astro';
           <span class="font-semibold">RAG Engine</span>
         </div>
         
-        <div class="flex items-center gap-6 text-text-secondary text-sm">
-          <a href="#" class="hover:text-text-primary transition-colors">Twitter</a>
-          <a href="#" class="hover:text-text-primary transition-colors">GitHub</a>
-          <a href="#" class="hover:text-text-primary transition-colors">Discord</a>
+        <div class="flex items-center gap-6 text-gray-400 text-sm">
+          <a href="#" class="hover:text-white">Twitter</a>
+          <a href="#" class="hover:text-white">GitHub</a>
         </div>
 
-        <div class="text-text-muted text-sm">
-          © 2026 RAG Engine. Todos los derechos reservados.
-        </div>
+        <div class="text-gray-500 text-sm">2026 RAG Engine.</div>
       </div>
     </footer>
   </main>
 
   <script>
-    const form = document.getElementById('waitlist-form') as HTMLFormElement;
-    const messageEl = document.getElementById('form-message');
-    const interestedCountEl = document.getElementById('interested-count');
+    var form = document.getElementById('waitlist-form');
+    var messageEl = document.getElementById('form-message');
+    var interestedCountEl = document.getElementById('interested-count');
 
-    async function fetchCount() {
-      try {
-        const res = await fetch('/api/waitlist');
-        const data = await res.json();
-        if (interestedCountEl && data.count) {
-          interestedCountEl.textContent = data.count + '+';
-        }
-      } catch (e) {}
-    }
+    fetch('/api/waitlist').then(function(res) { return res.json(); }).then(function(data) {
+      if (interestedCountEl && data.count) {
+        interestedCountEl.textContent = data.count + '+';
+      }
+    });
 
-    fetchCount();
-
-    form?.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const formData = new FormData(form);
-      const email = formData.get('email') as string;
-      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      var formData = new FormData(form);
+      var email = formData.get('email');
+      var submitBtn = form.querySelector('button[type="submit"]');
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando...';
 
-      try {
-        const res = await fetch('/api/waitlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
-        });
-
-        const data = await res.json();
-
+      fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).then(function(res) { return res.json(); }).then(function(data) {
         if (messageEl) {
-          if (res.ok) {
+          if (data.message) {
             messageEl.textContent = data.message;
-            messageEl.className = 'mt-6 text-sm text-emerald-400';
+            messageEl.className = 'mt-6 text-sm text-green-400';
           } else {
-            messageEl.textContent = data.error || data.message;
+            messageEl.textContent = data.error || 'Error';
             messageEl.className = 'mt-6 text-sm text-red-400';
           }
           messageEl.classList.remove('hidden');
         }
-
-        if (res.ok) {
+        if (data.message) {
           form.reset();
-          fetchCount();
         }
-      } catch (err) {
-        if (messageEl) {
-          messageEl.textContent = 'Error de conexión. Intenta de nuevo.';
-          messageEl.className = 'mt-6 text-sm text-red-400';
-          messageEl.classList.remove('hidden');
-        }
-      } finally {
+      }).finally(function() {
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Unirse Ahora';
-      }
+        submitBtn.textContent = 'Unirse Gratis';
+      });
     });
   </script>
 </Layout>

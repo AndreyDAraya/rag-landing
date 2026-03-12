@@ -1,8 +1,8 @@
 # RAG Engine - Landing Page
 
-Landing page de preventivo para RAG Engine - sistema de búsqueda semántica y chatbots con IA.
+Landing page de preventa para RAG Engine - sistema de busqueda semantica y chatbots con IA.
 
-## 🚀 Demo
+## Demo
 
 ```bash
 cd landing
@@ -10,22 +10,22 @@ npm install
 npm run start
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Astro** - Framework web
-- **Tailwind CSS** - Estilos
-- **Supabase** - Base de datos (waitlist)
-- **Node.js** - Server runtime
+- Astro
+- Tailwind CSS
+- Supabase (waitlist)
+- Node.js adapter
 
-## 📝 Variables de Entorno
+## Variables de Entorno
 
-Crear `.env` en la raíz del proyecto:
+Crear `.env`:
 
-```env
+```
 SUPABASE_URL=https://tu-proyecto.supabase.co
 SUPABASE_ANON_KEY=tu-anon-key
 ```
 
-## 📄 Licencia
+## Licencia
 
 MIT
