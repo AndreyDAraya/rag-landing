@@ -1,342 +1,810 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="RAG Engine - IA para tu negocio">
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none"></div>
-  <div class="fixed inset-0 bg-dots-pattern pointer-events-none opacity-30"></div>
+<Layout title="know-base.ai - Motor de IA con conocimiento propio">
 
-  <nav class="relative z-50 flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-    <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-        </svg>
-      </div>
-      <span class="text-xl font-bold">RAG Engine</span>
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="#features" class="text-gray-400 hover:text-white text-sm">Features</a>
-      <a href="#use-cases" class="text-gray-400 hover:text-white text-sm">Casos</a>
-      <a href="#pricing" class="text-gray-400 hover:text-white text-sm">Precios</a>
-      <a href="#waitlist" class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-sm">
-        Empezar
+  <!-- Ambient glow — top center only -->
+  <div
+    class="fixed top-0 left-1/2 -translate-x-1/2 w-200 h-125 pointer-events-none"
+    style="background: radial-gradient(ellipse at 50% 0%, rgba(13,148,136,0.13) 0%, transparent 65%); z-index: 0;"
+  ></div>
+  <!-- Very faint grid -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none opacity-100"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-blur">
+    <div class="flex items-center justify-between px-6 py-4 max-w-6xl mx-auto">
+      <a href="#" class="flex items-center gap-2.5">
+        <img src="/icon.png" alt="know-base.ai" class="h-8 w-8" />
+        <span class="brand-text"><span class="font-bold">know-base</span><span class="font-normal">.ai</span></span>
       </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#how-it-works" class="text-sm text-[#6e6e73] hover:text-[#f5f5f7] transition-colors">Como funciona</a>
+        <a href="#use-cases"    class="text-sm text-[#6e6e73] hover:text-[#f5f5f7] transition-colors">Casos</a>
+        <a href="#features"     class="text-sm text-[#6e6e73] hover:text-[#f5f5f7] transition-colors">Features</a>
+        <a href="#pricing"      class="text-sm text-[#6e6e73] hover:text-[#f5f5f7] transition-colors">Precios</a>
+        <a href="#waitlist"     class="text-sm px-5 py-2 rounded-full border border-[#2dd4bf]/35 text-[#2dd4bf] hover:bg-[#2dd4bf]/5 transition-all font-medium">
+          Empezar gratis
+        </a>
+      </div>
+
+      <button id="mobile-toggle" class="md:hidden p-2 text-[#6e6e73] hover:text-white" aria-label="Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 z-50 w-72 bg-[#060606]/98 backdrop-blur-xl border-l border-white/5 p-8 flex flex-col gap-6 md:hidden">
+    <button id="mobile-close" class="self-end p-2 text-[#6e6e73] hover:text-white" aria-label="Cerrar">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <a href="#how-it-works" class="text-lg text-[#a1a1aa] hover:text-white mobile-link">Como funciona</a>
+    <a href="#use-cases"    class="text-lg text-[#a1a1aa] hover:text-white mobile-link">Casos de uso</a>
+    <a href="#features"     class="text-lg text-[#a1a1aa] hover:text-white mobile-link">Features</a>
+    <a href="#pricing"      class="text-lg text-[#a1a1aa] hover:text-white mobile-link">Precios</a>
+    <a href="#waitlist"     class="glow-button px-6 py-3 rounded-full text-center font-medium mobile-link">
+      <span>Empezar gratis</span>
+    </a>
+  </div>
+
   <main class="relative z-10">
-    <section class="px-6 py-20 max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 mb-6">
-            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            <span class="text-sm text-gray-400">Ahora con embeddings ultra-rapidos</span>
-          </div>
-          
-          <h1 class="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            Tu IA conoce
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 block">tu negocio</span>
-          </h1>
-          
-          <p class="text-lg text-gray-400 max-w-xl mb-8">
-            Chatbot que sabe de tus productos, documentos y empresa.
-            En minutos. Por API REST. Costos bajos.
-          </p>
 
-          <div class="flex gap-4 mb-10">
-            <a href="#waitlist" class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold">
-              Crear mi chatbot
-            </a>
-          </div>
+    <!-- ===== HERO ===== -->
+    <section class="relative pt-40 pb-28 lg:pt-52 lg:pb-36 px-6 text-center">
+      <div class="max-w-4xl mx-auto">
 
-          <div class="flex gap-8">
-            <div>
-              <div class="text-2xl font-bold" id="interested-count">99+</div>
-              <div class="text-gray-500 text-sm">Empresas</div>
-            </div>
-            <div class="w-px bg-gray-700"></div>
-            <div>
-              <div class="text-2xl font-bold">$9</div>
-              <div class="text-gray-500 text-sm">/mes starter</div>
-            </div>
-            <div class="w-px bg-gray-700"></div>
-            <div>
-              <div class="text-2xl font-bold">&lt;100ms</div>
-              <div class="text-gray-500 text-sm">latencia</div>
-            </div>
+        <!-- Eyebrow -->
+        <div class="reveal inline-flex items-center gap-2 mb-10">
+          <span class="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse"></span>
+          <span class="text-sm text-[#6e6e73] tracking-wide">Motor de IA listo para produccion</span>
+        </div>
+
+        <!-- Headline -->
+        <h1
+          class="reveal reveal-delay-1 font-bold leading-[1.05] tracking-[-0.04em] mb-8"
+          style="font-size: clamp(2.6rem, 7vw, 5.5rem); font-family: var(--font-display);"
+        >
+          Conecta tu conocimiento<br>
+          <span style="color: #2dd4bf;">con inteligencia artificial.</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="reveal reveal-delay-2 text-xl text-[#6e6e73] max-w-2xl mx-auto mb-12 leading-relaxed">
+          IA que entiende tus documentos, productos y datos.
+          Chatbots, buscadores y copilots via API en minutos.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal reveal-delay-3 flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+          <a href="#waitlist" class="glow-button px-8 py-3.5 rounded-full font-semibold text-base">
+            <span>Empezar gratis</span>
+          </a>
+          <a href="#how-it-works" class="group flex items-center gap-2 text-[#6e6e73] hover:text-[#f5f5f7] transition-colors text-base">
+            Ver como funciona
+            <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="reveal flex items-center justify-center gap-8 sm:gap-16 mb-24">
+          <div class="text-center">
+            <div class="stat-number text-4xl font-bold text-[#f5f5f7] mb-1" id="interested-count">99+</div>
+            <div class="text-sm text-[#6e6e73]">empresas interesadas</div>
+          </div>
+          <div class="w-px h-10 bg-white/8"></div>
+          <div class="text-center">
+            <div class="stat-number text-4xl font-bold text-[#f5f5f7] mb-1">$9</div>
+            <div class="text-sm text-[#6e6e73]">por mes desde</div>
+          </div>
+          <div class="w-px h-10 bg-white/8"></div>
+          <div class="text-center">
+            <div class="stat-number text-4xl font-bold text-[#f5f5f7] mb-1">&lt;100<span class="text-xl text-[#6e6e73]">ms</span></div>
+            <div class="text-sm text-[#6e6e73]">latencia promedio</div>
           </div>
         </div>
 
-        <div class="bg-gray-800/50 rounded-2xl p-1 border border-gray-700">
-          <div class="bg-gray-900 rounded-xl">
-            <div class="px-5 py-4 border-b border-gray-700 flex items-center justify-between">
+        <!-- Chat demo -->
+        <div class="reveal reveal-delay-2 relative max-w-lg mx-auto">
+          <p class="text-xs text-[#6e6e73] uppercase tracking-[0.15em] mb-5">Ejemplo · chatbot e-commerce</p>
+          <div class="absolute -inset-6 rounded-3xl blur-3xl pointer-events-none" style="background: radial-gradient(ellipse, rgba(13,148,136,0.1) 0%, transparent 70%);"></div>
+          <div class="relative clean-card rounded-2xl overflow-hidden text-left">
+
+            <!-- Header -->
+            <div class="px-5 py-4 border-b border-white/5 flex items-center justify-between">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+                <div class="w-9 h-9 rounded-full bg-linear-to-br from-teal-600 to-teal-400 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4 text-[#060606]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
                   </svg>
                 </div>
                 <div>
-                  <div class="font-medium">Asistente ZapatillasPro</div>
-                  <div class="text-xs text-gray-500 flex items-center gap-1">
-                    <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
-                    Online
+                  <div class="text-sm font-medium text-[#f5f5f7]">Asistente ZapatillasPro</div>
+                  <div class="text-xs text-[#6e6e73] flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Online · responde en &lt;2s
                   </div>
                 </div>
               </div>
-              <div class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs">
-                E-commerce
-              </div>
+              <span class="text-xs text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full">E-commerce</span>
             </div>
-            
-            <div class="p-4 space-y-4 h-80 overflow-y-auto">
+
+            <!-- Messages -->
+            <div class="p-5 space-y-4 h-56 overflow-hidden">
               <div class="flex gap-3">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex-shrink-0"></div>
-                <div class="bg-gray-800 rounded-xl px-4 py-3 max-w-[85%]">
-                  <p class="text-sm">Hola. Soy el asistente de ZapatillasPro. En que puedo ayudarte?</p>
+                <div class="w-6 h-6 rounded-full bg-linear-to-br from-teal-600 to-teal-400 shrink-0 mt-0.5"></div>
+                <div class="chat-bubble-ai px-4 py-3 max-w-[85%] text-sm leading-relaxed">
+                  Hola! Soy el asistente de <strong>ZapatillasPro</strong>. ¿En que puedo ayudarte?
                 </div>
               </div>
-
               <div class="flex justify-end">
-                <div class="bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl px-4 py-3 max-w-[85%]">
-                  <p class="text-sm text-white">Estas zapatillas son resistentes al agua?</p>
+                <div class="chat-bubble-user px-4 py-3 max-w-[85%] text-sm">
+                  ¿Estas zapatillas son resistentes al agua?
                 </div>
               </div>
-
               <div class="flex gap-3">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex-shrink-0"></div>
-                <div class="bg-gray-800 rounded-xl px-4 py-3 max-w-[85%]">
-                  <p class="text-sm">Buena pregunta. Las Nike Air Max tienen mesh transpirable - no impermeable. No recomendadas para lluvia. Quieres ver modelos waterproof?</p>
+                <div class="w-6 h-6 rounded-full bg-linear-to-br from-teal-600 to-teal-400 shrink-0 mt-0.5"></div>
+                <div class="chat-bubble-ai px-4 py-3 max-w-[85%] text-sm leading-relaxed">
+                  Las <strong>Nike Air Max 90</strong> no son impermeables. Tenemos 3 modelos waterproof en stock.
+                  <div class="flex gap-2 mt-3">
+                    <span class="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs cursor-pointer hover:bg-teal-500/20 transition-colors">
+                      Ver modelos waterproof
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div id="typing-indicator" class="flex gap-3 opacity-0 transition-opacity duration-500">
+                <div class="w-6 h-6 rounded-full bg-linear-to-br from-teal-600 to-teal-400 shrink-0 mt-0.5"></div>
+                <div class="chat-bubble-ai px-4 py-3">
+                  <div class="animate-typing"><span></span><span></span><span></span></div>
                 </div>
               </div>
             </div>
 
-            <div class="p-4 border-t border-gray-700">
-              <div class="flex gap-3">
-                <input 
-                  type="text" 
+            <!-- Input -->
+            <div class="p-4 border-t border-white/5">
+              <div class="flex gap-2">
+                <input
+                  type="text"
                   placeholder="Escribe tu pregunta..."
-                  class="flex-1 px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none"
+                  class="flex-1 px-4 py-2.5 rounded-xl bg-white/3 border border-white/6 focus:border-teal-500/40 focus:outline-none text-sm placeholder:text-[#4a4a4a] transition-colors"
+                  disabled
                 />
-                <button class="px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                <button class="px-3.5 py-2.5 rounded-xl bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 transition-colors" disabled>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                   </svg>
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <section id="use-cases" class="px-6 py-20 bg-gray-800/30">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4">
-            Un proyecto. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Un mundo de posibilidades.</span>
+    <div class="section-divider"></div>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works" class="px-6 py-32 max-w-6xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="reveal section-label">Simple de usar</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Tres pasos. Listo.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 mb-14">
+        <!-- Step 1 -->
+        <div class="reveal clean-card rounded-2xl p-8">
+          <div class="text-xs font-mono text-[#6e6e73] mb-6">01</div>
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Subi tus datos</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">PDFs, URLs, texto plano o conecta tu API. El sistema procesa e indexa todo automaticamente.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="reveal reveal-delay-1 clean-card rounded-2xl p-8">
+          <div class="text-xs font-mono text-[#6e6e73] mb-6">02</div>
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Configura tu proyecto</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Elige modelo de IA, parametros de busqueda y formato de respuesta. Todo via dashboard o API.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-8">
+          <div class="text-xs font-mono text-[#6e6e73] mb-6">03</div>
+          <div class="w-11 h-11 rounded-xl bg-teal-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Consulta via API</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Respuestas inteligentes con contexto real de tus datos. Chatbot, buscador, copilot — lo que necesites.</p>
+        </div>
+      </div>
+
+      <!-- Code snippet -->
+      <div class="reveal max-w-2xl mx-auto">
+        <div class="code-block rounded-xl overflow-hidden">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+            <span class="ml-2 text-xs text-[#6e6e73] font-mono">query.sh</span>
+          </div>
+          <pre class="p-6 text-sm font-mono leading-loose overflow-x-auto scrollbar-thin"><code><span class="text-[#6e6e73]"># Una sola llamada para consultar tus datos</span>
+<span class="text-teal-400">curl</span> <span class="text-[#a1a1aa]">-X POST</span> <span class="text-emerald-400">https://api.know-base.ai/v1/chat</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Authorization: Bearer tu_api_key"</span> \
+  <span class="text-[#a1a1aa]">-d</span> <span class="text-amber-300">'{{"message": "tienen talle 42?"}}'</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== INGESTION API ===== -->
+    <section id="ingestion" class="px-6 py-32 max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left: copy -->
+        <div>
+          <p class="reveal section-label mb-4">Ingestion API</p>
+          <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-0 mb-6">
+            Dale conocimiento<br>a tu know-base.
           </h2>
+          <p class="reveal text-[#6e6e73] text-lg leading-relaxed mb-10">
+            Enviá documentos, URLs o texto plano via API y tu proyecto los procesa, fragmenta e indexa automaticamente.
+            Sin configurar pipelines ni modelos de embedding.
+          </p>
+
+          <!-- Source types -->
+          <div class="reveal space-y-3">
+            <div class="flex items-center gap-3 p-4 clean-card rounded-xl">
+              <div class="w-9 h-9 rounded-lg bg-teal-500/10 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-medium text-[#f5f5f7]">Documentos</div>
+                <div class="text-xs text-[#6e6e73]">PDF, DOCX, TXT, CSV, Markdown</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 clean-card rounded-xl">
+              <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-medium text-[#f5f5f7]">URLs & Sitemaps</div>
+                <div class="text-xs text-[#6e6e73]">Paginas web, documentacion, blogs</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 p-4 clean-card rounded-xl">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0">
+                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <div>
+                <div class="text-sm font-medium text-[#f5f5f7]">Raw Text & JSON</div>
+                <div class="text-xs text-[#6e6e73]">Cualquier contenido estructurado o libre</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-            <div class="w-14 h-14 rounded-2xl bg-amber-500/20 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">E-commerce</h3>
-            <p class="text-gray-400 mb-4">
-              Tu chatbot sabe todos tus productos, precios, tallas. Responde "tiene en talla 42?", "vienen con garantia?".
-            </p>
+        <!-- Right: code tabs -->
+        <div class="reveal reveal-delay-1">
+          <!-- Tab selector -->
+          <div class="flex gap-1 mb-4 p-1 rounded-xl bg-white/3 border border-white/6 w-fit">
+            <button onclick="switchTab('pdf')"   id="tab-pdf"  class="ingestion-tab active-tab px-4 py-1.5 rounded-lg text-xs font-medium transition-all">PDF</button>
+            <button onclick="switchTab('url')"   id="tab-url"  class="ingestion-tab px-4 py-1.5 rounded-lg text-xs font-medium transition-all text-[#6e6e73] hover:text-white">URL</button>
+            <button onclick="switchTab('text')"  id="tab-text" class="ingestion-tab px-4 py-1.5 rounded-lg text-xs font-medium transition-all text-[#6e6e73] hover:text-white">Texto</button>
           </div>
 
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-            <div class="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
+          <!-- PDF -->
+          <div id="snippet-pdf" class="ingestion-snippet">
+            <div class="code-block rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <span class="ml-2 text-xs text-[#6e6e73] font-mono">ingest-pdf.sh</span>
+              </div>
+              <pre class="p-6 text-sm font-mono leading-loose overflow-x-auto scrollbar-thin"><code><span class="text-[#6e6e73]"># Subir un PDF a tu proyecto</span>
+<span class="text-teal-400">curl</span> <span class="text-[#a1a1aa]">-X POST</span> <span class="text-emerald-400">https://api.know-base.ai/v1/ingest</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Authorization: Bearer tu_api_key"</span> \
+  <span class="text-[#a1a1aa]">-F</span> <span class="text-amber-300">"file=@catalogo-productos.pdf"</span> \
+  <span class="text-[#a1a1aa]">-F</span> <span class="text-amber-300">"project_id=mi-ecommerce"</span>
+
+<span class="text-[#6e6e73]"># Respuesta</span>
+<span class="text-white">{</span>
+  <span class="text-teal-400">"status"</span><span class="text-white">:</span> <span class="text-amber-300">"processing"</span><span class="text-white">,</span>
+  <span class="text-teal-400">"chunks"</span><span class="text-white">:</span> <span class="text-purple-400">247</span><span class="text-white">,</span>
+  <span class="text-teal-400">"message"</span><span class="text-white">:</span> <span class="text-amber-300">"Documento indexado correctamente"</span>
+<span class="text-white">}</span></code></pre>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Legal</h3>
-            <p class="text-gray-400 mb-4">
-              Contratos, terminos, politicas. Tu IA responde "que dice la clausula 4?", "cual es la politica de devolucion?".
-            </p>
           </div>
 
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-            <div class="w-14 h-14 rounded-2xl bg-green-500/20 flex items-center justify-center mb-6">
-              <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
+          <!-- URL -->
+          <div id="snippet-url" class="ingestion-snippet hidden">
+            <div class="code-block rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <span class="ml-2 text-xs text-[#6e6e73] font-mono">ingest-url.sh</span>
+              </div>
+              <pre class="p-6 text-sm font-mono leading-loose overflow-x-auto scrollbar-thin"><code><span class="text-[#6e6e73]"># Indexar una URL o sitemap completo</span>
+<span class="text-teal-400">curl</span> <span class="text-[#a1a1aa]">-X POST</span> <span class="text-emerald-400">https://api.know-base.ai/v1/ingest</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Authorization: Bearer tu_api_key"</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Content-Type: application/json"</span> \
+  <span class="text-[#a1a1aa]">-d</span> <span class="text-amber-300">'{</span>
+<span class="text-amber-300">    "url": "https://tusitio.com/docs/sitemap.xml",</span>
+<span class="text-amber-300">    "project_id": "mi-docs",</span>
+<span class="text-amber-300">    "type": "sitemap"</span>
+<span class="text-amber-300">  }'</span>
+
+<span class="text-[#6e6e73]"># Respuesta</span>
+<span class="text-white">{</span>
+  <span class="text-teal-400">"status"</span><span class="text-white">:</span> <span class="text-amber-300">"processing"</span><span class="text-white">,</span>
+  <span class="text-teal-400">"pages_found"</span><span class="text-white">:</span> <span class="text-purple-400">84</span>
+<span class="text-white">}</span></code></pre>
             </div>
-            <h3 class="text-xl font-semibold mb-3">Empresa</h3>
-            <p class="text-gray-400 mb-4">
-              Conoce tu empresa, servicios, horarios. "Cuales son los horarios?", "tienen servicio tecnico?".
-            </p>
+          </div>
+
+          <!-- Text -->
+          <div id="snippet-text" class="ingestion-snippet hidden">
+            <div class="code-block rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5">
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-white/10"></div>
+                <span class="ml-2 text-xs text-[#6e6e73] font-mono">ingest-text.sh</span>
+              </div>
+              <pre class="p-6 text-sm font-mono leading-loose overflow-x-auto scrollbar-thin"><code><span class="text-[#6e6e73]"># Enviar texto o JSON directamente</span>
+<span class="text-teal-400">curl</span> <span class="text-[#a1a1aa]">-X POST</span> <span class="text-emerald-400">https://api.know-base.ai/v1/ingest</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Authorization: Bearer tu_api_key"</span> \
+  <span class="text-[#a1a1aa]">-H</span> <span class="text-amber-300">"Content-Type: application/json"</span> \
+  <span class="text-[#a1a1aa]">-d</span> <span class="text-amber-300">'{</span>
+<span class="text-amber-300">    "content": "Horario de atencion: L-V 9-18hs.",</span>
+<span class="text-amber-300">    "project_id": "soporte-interno",</span>
+<span class="text-amber-300">    "metadata": {"{"}"category": "horarios"{"}"}</span>
+<span class="text-amber-300">  }'</span>
+
+<span class="text-[#6e6e73]"># Respuesta</span>
+<span class="text-white">{</span>
+  <span class="text-teal-400">"status"</span><span class="text-white">:</span> <span class="text-amber-300">"indexed"</span><span class="text-white">,</span>
+  <span class="text-teal-400">"chunk_id"</span><span class="text-white">:</span> <span class="text-amber-300">"chk_9f3a2b"</span>
+<span class="text-white">}</span></code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ===== USE CASES ===== -->
+    <section id="use-cases" class="px-6 py-32 max-w-6xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="reveal section-label">Casos de uso</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Un motor. Infinitas aplicaciones.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <!-- E-commerce -->
+        <div class="reveal clean-card rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">E-commerce</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed mb-5">IA que conoce cada producto, precio y stock. Chatbots, buscadores inteligentes o recomendaciones automaticas.</p>
+          <div class="space-y-2">
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Tiene en talla 42?"</div>
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Viene con garantia?"</div>
+          </div>
+        </div>
+
+        <!-- Legal -->
+        <div class="reveal reveal-delay-1 clean-card rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Legal & Documentos</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed mb-5">Contratos, terminos, politicas. Extrae respuestas precisas de documentos largos via API o interfaz.</p>
+          <div class="space-y-2">
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Que dice la clausula 4?"</div>
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Politica de devolucion?"</div>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-8">
+          <div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Conocimiento Interno</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed mb-5">Base de conocimiento empresarial. Servicios, procedimientos y datos accesibles para cualquier sistema.</p>
+          <div class="space-y-2">
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Cuales son los horarios?"</div>
+            <div class="text-xs text-[#6e6e73] bg-white/3 rounded-lg px-3 py-2 font-mono">"¿Tienen servicio tecnico?"</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="px-6 py-20 max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4">Todo lo que necesitas.</h2>
+    <div class="section-divider"></div>
+
+    <!-- ===== FEATURES ===== -->
+    <section id="features" class="px-6 py-32 max-w-6xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="reveal section-label">Infraestructura</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Todo lo que necesitas.</h2>
+        <p class="reveal text-[#6e6e73] mt-4 max-w-lg mx-auto leading-relaxed">Enfocate en tu producto. Nosotros nos encargamos del pipeline de IA.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="reveal clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+          </div>
           <h3 class="font-semibold mb-2">Multi-fuente</h3>
-          <p class="text-sm text-gray-400">PDFs, URLs, texto, APIs.</p>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">PDFs, URLs, texto plano, CSV. Ingesta flexible para cualquier tipo de contenido.</p>
         </div>
-        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-          <h3 class="font-semibold mb-2">Embeddings</h3>
-          <p class="text-sm text-gray-400">Busqueda semantica.</p>
+
+        <div class="reveal reveal-delay-1 clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Busqueda Semantica</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Embeddings vectoriales para encontrar respuestas por significado, no solo keywords.</p>
         </div>
-        <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
-          <h3 class="font-semibold mb-2">Aislamiento</h3>
-          <p class="text-sm text-gray-400">Datos aislados por proyecto.</p>
+
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Aislamiento Total</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Cada proyecto tiene sus propios datos y configuracion. Zero cross-contamination.</p>
+        </div>
+
+        <div class="reveal clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Ultra Rapido</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Respuestas en menos de 100ms gracias a busqueda vectorial y caching inteligente.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1 clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">API REST</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Endpoints simples y bien documentados. Integralo en cualquier stack en minutos.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Analytics</h3>
+          <p class="text-sm text-[#6e6e73] leading-relaxed">Metricas de uso, consultas frecuentes y feedback para optimizar tus integraciones.</p>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="px-6 py-20 bg-gray-800/30">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold mb-4">Precios que funcionan</h2>
-          <p class="text-gray-400">Desde $9/mes.</p>
+    <div class="section-divider"></div>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="px-6 py-32 max-w-5xl mx-auto">
+      <div class="text-center mb-20">
+        <p class="reveal section-label">Precios</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Paga solo lo que usas.</h2>
+        <p class="reveal text-[#6e6e73] mt-4">Sin contratos. Cancela cuando quieras.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 items-start">
+
+        <!-- Starter -->
+        <div class="reveal clean-card rounded-2xl p-8">
+          <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Starter</h3>
+          <p class="text-xs text-[#6e6e73] mb-8">Para probar y proyectos chicos</p>
+          <div class="mb-8">
+            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$9</span>
+            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
+          </div>
+          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
+            <li>1 proyecto</li>
+            <li>1,000 consultas/mes</li>
+            <li>50 MB de documentos</li>
+            <li>API REST</li>
+            <li>Soporte por email</li>
+          </ul>
+          <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
+            Empezar
+          </a>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-            <h3 class="text-xl font-semibold mb-2">Starter</h3>
-            <div class="mb-6"><span class="text-4xl font-bold">$9</span><span class="text-gray-500">/mes</span></div>
-            <ul class="space-y-3 mb-8 text-sm">
-              <li class="flex items-center gap-2 text-gray-400">1 proyecto</li>
-              <li class="flex items-center gap-2 text-gray-400">1,000 msgs/mes</li>
-            </ul>
-            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-gray-600">Empezar</a>
+        <!-- Pro -->
+        <div class="reveal reveal-delay-1 relative rounded-2xl p-8" style="background: linear-gradient(160deg, rgba(13,148,136,0.07) 0%, rgba(0,212,191,0.03) 100%); border: 1px solid rgba(45,212,191,0.18);">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-semibold tracking-wide" style="background: #2dd4bf; color: #060606;">
+            Popular
           </div>
-
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-blue-500/30 relative">
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-sm">Popular</div>
-            <h3 class="text-xl font-semibold mb-2">Pro</h3>
-            <div class="mb-6"><span class="text-4xl font-bold">$29</span><span class="text-gray-500">/mes</span></div>
-            <ul class="space-y-3 mb-8 text-sm">
-              <li class="flex items-center gap-2 text-gray-400">5 proyectos</li>
-              <li class="flex items-center gap-2 text-gray-400">10,000 msgs/mes</li>
-            </ul>
-            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white">Empezar</a>
+          <h3 class="text-base font-medium mb-1">Pro</h3>
+          <p class="text-xs text-[#6e6e73] mb-8">Para negocios en crecimiento</p>
+          <div class="mb-8">
+            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$29</span>
+            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
           </div>
-
-          <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
-            <h3 class="text-xl font-semibold mb-2">Business</h3>
-            <div class="mb-6"><span class="text-4xl font-bold">$99</span><span class="text-gray-500">/mes</span></div>
-            <ul class="space-y-3 mb-8 text-sm">
-              <li class="flex items-center gap-2 text-gray-400">Proyectos ilimitados</li>
-              <li class="flex items-center gap-2 text-gray-400">100,000 msgs/mes</li>
-            </ul>
-            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-gray-600">Contactar</a>
-          </div>
+          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
+            <li>5 proyectos</li>
+            <li>10,000 consultas/mes</li>
+            <li>500 MB de documentos</li>
+            <li>API REST + Webhooks</li>
+            <li>Analytics dashboard</li>
+            <li>Soporte prioritario</li>
+          </ul>
+          <a href="#waitlist" class="glow-button block text-center px-6 py-3 rounded-full font-medium text-sm">
+            <span>Empezar</span>
+          </a>
         </div>
+
+        <!-- Business -->
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-8">
+          <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Business</h3>
+          <p class="text-xs text-[#6e6e73] mb-8">Para equipos y empresas</p>
+          <div class="mb-8">
+            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$99</span>
+            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
+          </div>
+          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
+            <li>Proyectos ilimitados</li>
+            <li>100,000 consultas/mes</li>
+            <li>5 GB de documentos</li>
+            <li>API REST + Webhooks + SSE</li>
+            <li>Analytics avanzado</li>
+            <li>Soporte dedicado + SLA</li>
+            <li>Custom embeddings</li>
+          </ul>
+          <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
+            Contactar
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <section id="waitlist" class="px-6 py-24 max-w-4xl mx-auto">
-      <div class="bg-gray-800/50 rounded-3xl p-12 text-center border border-gray-700">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm mb-8">
+    <!-- ===== WAITLIST CTA ===== -->
+    <section id="waitlist" class="px-6 py-36 relative">
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100"
+          style="background: radial-gradient(ellipse, rgba(13,148,136,0.1) 0%, transparent 65%);"
+        ></div>
+      </div>
+
+      <div class="reveal relative max-w-xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal-500/20 text-teal-400 text-sm mb-10">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
           Lanzamiento Q1 2026
         </div>
 
-        <h2 class="text-5xl font-bold mb-4">Listo para empezar?</h2>
-        
-        <p class="text-gray-400 text-lg mb-10 max-w-lg mx-auto">
-          Los primeros 100 get free lifetime access.
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] mb-6">
+          Potencia tu negocio<br>
+          <span style="color: #2dd4bf;">con IA.</span>
+        </h2>
+
+        <p class="text-[#6e6e73] text-lg mb-10 leading-relaxed max-w-md mx-auto">
+          Unite a la lista de espera. Los primeros 100 obtienen acceso lifetime gratis.
         </p>
 
-        <form id="waitlist-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <input 
-            type="email" 
+        <form id="waitlist-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input
+            type="email"
             name="email"
-            placeholder="tu@email.com" 
+            placeholder="tu@email.com"
             required
-            class="flex-1 px-6 py-4 rounded-full bg-gray-900 border border-gray-700 focus:border-blue-500 focus:outline-none text-lg"
+            class="flex-1 px-5 py-3.5 rounded-full bg-white/4 border border-white/8 focus:border-teal-500/40 focus:outline-none text-base placeholder:text-[#4a4a4a] transition-all"
           />
-          <button 
-            type="submit"
-            class="px-8 py-4 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold text-lg"
-          >
-            Unirse Gratis
+          <button type="submit" class="glow-button px-7 py-3.5 rounded-full font-semibold text-base whitespace-nowrap">
+            <span>Unirme gratis</span>
           </button>
         </form>
 
-        <div id="form-message" class="mt-6 text-sm hidden"></div>
+        <div id="form-message" class="mt-5 text-sm hidden"></div>
+        <p class="text-[#4a4a4a] text-xs mt-5">Sin spam. Solo actualizaciones importantes.</p>
       </div>
     </section>
 
-    <footer class="px-6 py-12 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
+    <!-- ===== FOOTER ===== -->
+    <footer class="px-6 py-12 border-t border-white/5">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <a href="#" class="flex items-center gap-2.5">
+            <img src="/icon.png" alt="know-base.ai" class="h-7 w-7"/>
+            <span class="brand-text"><span class="font-bold">know-base</span><span class="font-normal">.ai</span></span>
+          </a>
+
+          <div class="flex items-center gap-8">
+            <a href="#how-it-works" class="text-sm text-[#6e6e73] hover:text-[#a1a1aa] transition-colors">Como funciona</a>
+            <a href="#features"     class="text-sm text-[#6e6e73] hover:text-[#a1a1aa] transition-colors">Features</a>
+            <a href="#pricing"      class="text-sm text-[#6e6e73] hover:text-[#a1a1aa] transition-colors">Precios</a>
           </div>
-          <span class="font-semibold">RAG Engine</span>
-        </div>
-        
-        <div class="flex items-center gap-6 text-gray-400 text-sm">
-          <a href="#" class="hover:text-white">Twitter</a>
-          <a href="#" class="hover:text-white">GitHub</a>
+
+          <div class="flex items-center gap-4">
+            <a href="#" class="text-[#6e6e73] hover:text-white transition-colors" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-[#6e6e73] hover:text-white transition-colors" aria-label="GitHub">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div class="text-gray-500 text-sm">2026 RAG Engine.</div>
+        <div class="mt-8 pt-8 border-t border-white/4 text-center">
+          <p class="text-[#4a4a4a] text-sm">&copy; 2026 know-base.ai · Tu conocimiento, potenciado por IA.</p>
+        </div>
       </div>
     </footer>
+
   </main>
 
   <script>
-    var form = document.getElementById('waitlist-form');
-    var messageEl = document.getElementById('form-message');
-    var interestedCountEl = document.getElementById('interested-count');
+    // === Ingestion tabs ===
+    function switchTab(tab: string) {
+      document.querySelectorAll('.ingestion-snippet').forEach(function(el) {
+        el.classList.add('hidden');
+      });
+      document.querySelectorAll('.ingestion-tab').forEach(function(el) {
+        el.classList.remove('active-tab');
+        (el as HTMLElement).style.color = '';
+        el.classList.add('text-[#6e6e73]');
+      });
+      var snippet = document.getElementById('snippet-' + tab);
+      var tabBtn  = document.getElementById('tab-' + tab);
+      if (snippet) snippet.classList.remove('hidden');
+      if (tabBtn)  { tabBtn.classList.add('active-tab'); tabBtn.classList.remove('text-[#6e6e73]'); }
+    }
+    (window as any).switchTab = switchTab;
 
-    fetch('/api/waitlist').then(function(res) { return res.json(); }).then(function(data) {
-      if (interestedCountEl && data.count) {
-        interestedCountEl.textContent = data.count + '+';
+    // === Scroll reveal ===
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+    );
+    document.querySelectorAll(".reveal").forEach(function (el) {
+      observer.observe(el);
+    });
+
+    // === Nav scroll effect ===
+    var nav = document.getElementById("main-nav")!;
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 20) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
       }
     });
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var formData = new FormData(form);
-      var email = formData.get('email');
-      var submitBtn = form.querySelector('button[type="submit"]');
+    // === Mobile menu ===
+    var mobileMenu   = document.getElementById("mobile-menu")!;
+    var mobileToggle = document.getElementById("mobile-toggle")!;
+    var mobileClose  = document.getElementById("mobile-close")!;
+    mobileToggle.addEventListener("click", function () { mobileMenu.classList.add("open"); });
+    mobileClose.addEventListener("click",  function () { mobileMenu.classList.remove("open"); });
+    document.querySelectorAll(".mobile-link").forEach(function (link) {
+      link.addEventListener("click", function () { mobileMenu.classList.remove("open"); });
+    });
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
+    // === Typing indicator loop ===
+    var typingEl = document.getElementById("typing-indicator") as HTMLElement | null;
+    function loopTyping() {
+      setTimeout(function () {
+        if (typingEl) typingEl.style.opacity = "1";
+        setTimeout(function () {
+          if (typingEl) typingEl.style.opacity = "0";
+          setTimeout(loopTyping, 3000);
+        }, 2000);
+      }, 4000);
+    }
+    loopTyping();
 
-      fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email })
-      }).then(function(res) { return res.json(); }).then(function(data) {
-        if (messageEl) {
-          if (data.message) {
-            messageEl.textContent = data.message;
-            messageEl.className = 'mt-6 text-sm text-green-400';
-          } else {
-            messageEl.textContent = data.error || 'Error';
-            messageEl.className = 'mt-6 text-sm text-red-400';
-          }
-          messageEl.classList.remove('hidden');
+    // === Waitlist ===
+    var form            = document.getElementById("waitlist-form") as HTMLFormElement;
+    var messageEl       = document.getElementById("form-message");
+    var interestedCountEl = document.getElementById("interested-count");
+
+    fetch("/api/waitlist")
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (interestedCountEl && data.count) {
+          interestedCountEl.textContent = data.count + "+";
         }
-        if (data.message) {
-          form.reset();
-        }
-      }).finally(function() {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Unirse Gratis';
       });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var formData   = new FormData(form);
+      var email      = formData.get("email");
+      var submitBtn  = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      var submitSpan = submitBtn.querySelector("span")!;
+      submitBtn.disabled = true;
+      submitSpan.textContent = "Enviando...";
+
+      fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email }),
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (messageEl) {
+            if (data.message) {
+              messageEl.textContent = data.message;
+              messageEl.className   = "mt-5 text-sm text-emerald-400";
+            } else {
+              messageEl.textContent = data.error || "Error";
+              messageEl.className   = "mt-5 text-sm text-red-400";
+            }
+            messageEl.classList.remove("hidden");
+          }
+          if (data.message) form.reset();
+        })
+        .finally(function () {
+          submitBtn.disabled     = false;
+          submitSpan.textContent = "Unirme gratis";
+        });
     });
   </script>
+
 </Layout>
