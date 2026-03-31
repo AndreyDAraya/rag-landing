@@ -112,74 +112,82 @@ import Layout from "../layouts/Layout.astro";
         </div>
 
         <!-- Chat demo -->
-        <div class="reveal reveal-delay-2 relative max-w-lg mx-auto">
-          <p class="text-xs text-[#6e6e73] uppercase tracking-[0.15em] mb-5">Ejemplo · chatbot e-commerce</p>
-          <div class="absolute -inset-6 rounded-3xl blur-3xl pointer-events-none" style="background: radial-gradient(ellipse, rgba(219,162,122,0.1) 0%, transparent 70%);"></div>
-          <div class="relative clean-card rounded-2xl overflow-hidden text-left">
+        <div class="reveal reveal-delay-2 relative max-w-xl mx-auto">
+          <p class="text-xs text-[#9BB1B1] uppercase tracking-[0.15em] mb-5">Ejemplo · chatbot e-commerce</p>
+          <div class="absolute -inset-6 rounded-3xl blur-3xl pointer-events-none" style="background: radial-gradient(ellipse, rgba(219,162,122,0.15) 0%, transparent 70%);"></div>
+          <div class="relative rounded-2xl overflow-hidden" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);">
 
             <!-- Header -->
-            <div class="px-5 py-4 border-b border-white/5 flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-linear-to-br from-[#DBA27A] to-[#E5C695] flex items-center justify-center shrink-0">
-                  <svg class="w-4 h-4 text-[#060606]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
-                  </svg>
+            <div class="px-6 py-5 flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #DBA27A, #E5C695);">
+                  <span class="text-base font-bold" style="color: #1a1a1a;">base</span>
                 </div>
                 <div>
-                  <div class="text-sm font-medium text-[#f5f5f7]">Asistente ZapatillasPro</div>
-                  <div class="text-xs text-[#6e6e73] flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Online · responde en &lt;2s
+                  <div class="text-base font-medium text-[#f5f5f7]">Asistente ZapatillasPro</div>
+                  <div class="text-sm flex items-center gap-1.5 mt-0.5" style="color: #9BB1B1;">
+                    <span class="w-2 h-2 rounded-full animate-pulse" style="background: #DBA27A;"></span>
+                    Online · &lt;2s respuesta
                   </div>
                 </div>
               </div>
-              <span class="text-xs text-[#DBA27A] bg-[#DBA27A]/10 px-3 py-1 rounded-full">E-commerce</span>
+              <span class="text-sm px-4 py-1.5 rounded-full" style="background: rgba(219,162,122,0.15); color: #DBA27A;">E-commerce</span>
             </div>
 
             <!-- Messages -->
-            <div class="p-5 space-y-4 h-56 overflow-hidden">
-              <div class="flex gap-3">
-                <div class="w-6 h-6 rounded-full bg-linear-to-br from-[#DBA27A] to-[#E5C695] shrink-0 mt-0.5"></div>
-                <div class="chat-bubble-ai px-4 py-3 max-w-[85%] text-sm leading-relaxed">
-                  Hola! Soy el asistente de <strong>ZapatillasPro</strong>. ¿En que puedo ayudarte?
+            <div class="p-6 space-y-5 h-64 overflow-hidden">
+              <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #DBA27A, #E5C695);">
+                  <span class="text-sm font-bold" style="color: #1a1a1a;">b</span>
+                </div>
+                <div class="px-5 py-4 rounded-2xl rounded-tl-sm max-w-[85%] text-base leading-relaxed" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #f5f5f7;">
+                  Hola! Soy el asistente de <strong>ZapatillasPro</strong>. ¿En qué puedo ayudarte?
                 </div>
               </div>
               <div class="flex justify-end">
-                <div class="chat-bubble-user px-4 py-3 max-w-[85%] text-sm">
-                  ¿Estas zapatillas son resistentes al agua?
+                <div class="px-5 py-4 rounded-2xl rounded-tr-sm max-w-[85%] text-base" style="background: linear-gradient(135deg, #DBA27A, #E5C695); color: #1a1a1a;">
+                  ¿Tiene este modelo en talla 42?
                 </div>
               </div>
-              <div class="flex gap-3">
-                <div class="w-6 h-6 rounded-full bg-linear-to-br from-[#DBA27A] to-[#E5C695] shrink-0 mt-0.5"></div>
-                <div class="chat-bubble-ai px-4 py-3 max-w-[85%] text-sm leading-relaxed">
-                  Las <strong>Nike Air Max 90</strong> no son impermeables. Tenemos 3 modelos waterproof en stock.
-                  <div class="flex gap-2 mt-3">
-                    <span class="px-3 py-1 rounded-full bg-[#DBA27A]/10 text-[#DBA27A] text-xs cursor-pointer hover:bg-[#DBA27A]/20 transition-colors">
-                      Ver modelos waterproof
+              <div class="flex gap-4">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #DBA27A, #E5C695);">
+                  <span class="text-sm font-bold" style="color: #1a1a1a;">b</span>
+                </div>
+                <div class="px-5 py-4 rounded-2xl rounded-tl-sm max-w-[85%] text-base leading-relaxed" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); color: #f5f5f7;">
+                  Sí! El <strong>Airmax Runner</strong> tiene stock en talles 40, 41 y 42. ¿Querés que te reserve uno?
+                  <div class="flex gap-3 mt-4">
+                    <span class="px-4 py-2 rounded-full text-sm cursor-pointer transition-colors" style="background: rgba(219,162,122,0.2); color: #DBA27A;">
+                      Sí, reservar
+                    </span>
+                    <span class="px-4 py-2 rounded-full text-sm cursor-pointer transition-colors" style="background: rgba(255,255,255,0.05); color: #9BB1B1;">
+                      Ver otros talles
                     </span>
                   </div>
                 </div>
               </div>
-              <div id="typing-indicator" class="flex gap-3 opacity-0 transition-opacity duration-500">
-                <div class="w-6 h-6 rounded-full bg-linear-to-br from-[#DBA27A] to-[#E5C695] shrink-0 mt-0.5"></div>
-                <div class="chat-bubble-ai px-4 py-3">
+              <div id="typing-indicator" class="flex gap-4 opacity-0 transition-opacity duration-500">
+                <div class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background: linear-gradient(135deg, #DBA27A, #E5C695);">
+                  <span class="text-sm font-bold" style="color: #1a1a1a;">b</span>
+                </div>
+                <div class="px-5 py-4 rounded-2xl rounded-tl-sm" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);">
                   <div class="animate-typing"><span></span><span></span><span></span></div>
                 </div>
               </div>
             </div>
 
             <!-- Input -->
-            <div class="p-4 border-t border-white/5">
-              <div class="flex gap-2">
+            <div class="p-5" style="border-top: 1px solid rgba(255,255,255,0.06);">
+              <div class="flex gap-3">
                 <input
                   type="text"
                   placeholder="Escribe tu pregunta..."
-                  class="flex-1 px-4 py-2.5 rounded-xl bg-white/3 border border-white/6 focus:border-[#DBA27A]/40 focus:outline-none text-sm placeholder:text-[#4a4a4a] transition-colors"
+                  class="flex-1 px-5 py-4 rounded-xl text-base transition-colors outline-none"
+                  style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #f5f5f7;"
                   disabled
                 />
-                <button class="px-3.5 py-2.5 rounded-xl bg-[#DBA27A]/10 text-[#DBA27A] hover:bg-[#DBA27A]/20 transition-colors" disabled>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                <button class="px-5 py-4 rounded-xl transition-all" style="background: linear-gradient(135deg, #DBA27A, #E5C695); color: #1a1a1a;" disabled>
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"/>
                   </svg>
                 </button>
               </div>
@@ -536,80 +544,176 @@ import Layout from "../layouts/Layout.astro";
     <section id="pricing" class="px-6 py-32 max-w-5xl mx-auto">
       <div class="text-center mb-20">
         <p class="reveal section-label">Precios</p>
-        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Paga solo lo que usas.</h2>
-        <p class="reveal text-[#6e6e73] mt-4">Sin contratos. Cancela cuando quieras.</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">Simple y transparente.</h2>
+        <p class="reveal text-[#9BB1B1] mt-4">Sin contratos. Cancela cuando quieras.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 items-start">
+<div class="grid md:grid-cols-4 gap-5 items-stretch">
+
+        <!-- Free -->
+        <div class="reveal flex flex-col clean-card rounded-2xl p-8">
+          <div>
+            <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Free</h3>
+            <p class="text-xs text-[#9BB1B1] mb-6">Para probar</p>
+            <div class="mb-6">
+              <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$0</span>
+              <span class="text-[#9BB1B1] ml-1 text-sm">/mes</span>
+            </div>
+            <ul class="check-list space-y-3 text-sm text-[#a1a1aa]">
+              <li>1 proyecto</li>
+              <li>500 consultas/mes</li>
+              <li>10 MB de documentos</li>
+              <li>API REST</li>
+              <li>Soporte por comunidad</li>
+            </ul>
+          </div>
+          <div class="mt-auto pt-6">
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
+              Empezar gratis
+            </a>
+          </div>
+        </div>
 
         <!-- Starter -->
-        <div class="reveal clean-card rounded-2xl p-8">
-          <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Starter</h3>
-          <p class="text-xs text-[#6e6e73] mb-8">Para probar y proyectos chicos</p>
-          <div class="mb-8">
-            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$9</span>
-            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
+        <div class="reveal reveal-delay-1 flex flex-col clean-card rounded-2xl p-8">
+          <div>
+            <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Starter</h3>
+            <p class="text-xs text-[#9BB1B1] mb-6">Para projetos pequenos</p>
+            <div class="mb-6">
+              <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$15</span>
+              <span class="text-[#9BB1B1] ml-1 text-sm">/mes</span>
+            </div>
+            <ul class="check-list space-y-3 text-sm text-[#a1a1aa]">
+              <li>1 proyecto</li>
+              <li>3,000 consultas/mes</li>
+              <li>100 MB de documentos</li>
+              <li>API REST</li>
+              <li>Soporte por email</li>
+            </ul>
           </div>
-          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
-            <li>1 proyecto</li>
-            <li>1,000 consultas/mes</li>
-            <li>50 MB de documentos</li>
-            <li>API REST</li>
-            <li>Soporte por email</li>
-          </ul>
-          <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
-            Empezar
-          </a>
+          <div class="mt-auto pt-6">
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
+              Empezar
+            </a>
+          </div>
         </div>
 
         <!-- Pro -->
-        <div class="reveal reveal-delay-1 relative rounded-2xl p-8" style="background: linear-gradient(160deg, rgba(219,162,122,0.07) 0%, rgba(229,198,149,0.03) 100%); border: 1px solid rgba(219,162,122,0.18);">
+        <div class="reveal reveal-delay-2 flex flex-col relative rounded-2xl p-8" style="background: linear-gradient(160deg, rgba(219,162,122,0.07) 0%, rgba(229,198,149,0.03) 100%); border: 1px solid rgba(219,162,122,0.18);">
           <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-xs font-semibold tracking-wide" style="background: #DBA27A; color: #060606;">
             Popular
           </div>
-          <h3 class="text-base font-medium mb-1">Pro</h3>
-          <p class="text-xs text-[#6e6e73] mb-8">Para negocios en crecimiento</p>
-          <div class="mb-8">
-            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$29</span>
-            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
+          <div>
+            <h3 class="text-base font-medium mb-1">Pro</h3>
+            <p class="text-xs text-[#9BB1B1] mb-6">Para equipos en crecimiento</p>
+            <div class="mb-6">
+              <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$49</span>
+              <span class="text-[#9BB1B1] ml-1 text-sm">/mes</span>
+            </div>
+            <ul class="check-list space-y-3 text-sm text-[#a1a1aa]">
+              <li>5 proyectos</li>
+              <li>20,000 consultas/mes</li>
+              <li>1 GB de documentos</li>
+              <li>API REST + Webhooks</li>
+              <li>Analytics dashboard</li>
+              <li>Soporte prioritario</li>
+            </ul>
           </div>
-          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
-            <li>5 proyectos</li>
-            <li>10,000 consultas/mes</li>
-            <li>500 MB de documentos</li>
-            <li>API REST + Webhooks</li>
-            <li>Analytics dashboard</li>
-            <li>Soporte prioritario</li>
-          </ul>
-          <a href="#waitlist" class="glow-button block text-center px-6 py-3 rounded-full font-medium text-sm">
-            <span>Empezar</span>
-          </a>
+          <div class="mt-auto pt-6">
+            <a href="#waitlist" class="glow-button block text-center px-6 py-3 rounded-full font-medium text-sm">
+              <span>Empezar</span>
+            </a>
+          </div>
         </div>
 
         <!-- Business -->
-        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-8">
-          <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Business</h3>
-          <p class="text-xs text-[#6e6e73] mb-8">Para equipos y empresas</p>
-          <div class="mb-8">
-            <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$99</span>
-            <span class="text-[#6e6e73] ml-1 text-sm">/mes</span>
+        <div class="reveal reveal-delay-3 flex flex-col clean-card rounded-2xl p-8">
+          <div>
+            <h3 class="text-base font-medium text-[#a1a1aa] mb-1">Business</h3>
+            <p class="text-xs text-[#9BB1B1] mb-6">Para alto volumen</p>
+            <div class="mb-6">
+              <span class="stat-number text-5xl font-bold text-[#f5f5f7]">$149</span>
+              <span class="text-[#9BB1B1] ml-1 text-sm">/mes</span>
+            </div>
+            <ul class="check-list space-y-3 text-sm text-[#a1a1aa]">
+              <li>20 proyectos</li>
+              <li>100,000 consultas/mes</li>
+              <li>10 GB de documentos</li>
+              <li>API REST + Webhooks + SSE</li>
+              <li>Analytics avanzado</li>
+              <li>Soporte dedicado + SLA</li>
+            </ul>
           </div>
-          <ul class="check-list space-y-3 mb-8 text-sm text-[#a1a1aa]">
-            <li>Proyectos ilimitados</li>
-            <li>100,000 consultas/mes</li>
-            <li>5 GB de documentos</li>
-            <li>API REST + Webhooks + SSE</li>
-            <li>Analytics avanzado</li>
-            <li>Soporte dedicado + SLA</li>
-            <li>Custom embeddings</li>
-          </ul>
-          <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
-            Contactar
-          </a>
+          <div class="mt-auto pt-6">
+            <a href="#waitlist" class="block text-center px-6 py-3 rounded-full border border-white/10 hover:border-white/20 text-[#a1a1aa] hover:text-white transition-all text-sm font-medium">
+              Contactar
+            </a>
+          </div>
+        </div>
+
+        <div class="col-span-4 text-center mt-8">
+          <p class="text-sm text-[#9BB1B1]">
+            ¿Necesitas mas? <a href="#waitlist" class="text-[#DBA27A] hover:underline">Habla con nosotros</a> para precios de Enterprise.
+          </p>
         </div>
 
       </div>
     </section>
+
+    <!-- ===== PARTNERS ===== -->
+    <section id="partners" class="px-6 py-32 max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <p class="reveal section-label">Programa de Partners</p>
+        <h2 class="reveal text-4xl lg:text-5xl font-bold tracking-[-0.03em] mt-4">¿Sos una empresa de desarrollo?</h2>
+        <p class="reveal text-[#9BB1B1] mt-4 max-w-2xl mx-auto leading-relaxed">
+          Unite al programa de partners de YouBase y brindá servicios de implementación a nombre de la marca.
+          Ayudá a tus clientes a aprovechar todo el poder de la IA con tu conocimiento técnico y nuestra plataforma.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="reveal clean-card rounded-2xl p-8 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-[#DBA27A]/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-[#DBA27A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Brindá servicios</h3>
+          <p class="text-sm text-[#9BB1B1] leading-relaxed">Implementá soluciones RAG para los clientes de tu cartera usando la plataforma YouBase.</p>
+        </div>
+
+        <div class="reveal reveal-delay-1 clean-card rounded-2xl p-8 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-[#DBA27A]/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-[#DBA27A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Certificación oficial</h3>
+          <p class="text-sm text-[#9BB1B1] leading-relaxed">Accedé a capacitación y certificación oficial de YouBase para representar la marca.</p>
+        </div>
+
+        <div class="reveal reveal-delay-2 clean-card rounded-2xl p-8 text-center">
+          <div class="w-14 h-14 rounded-2xl bg-[#DBA27A]/10 flex items-center justify-center mx-auto mb-5">
+            <svg class="w-6 h-6 text-[#DBA27A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-3">Comisiones competitivas</h3>
+          <p class="text-sm text-[#9BB1B1] leading-relaxed">Ganá comisiones por cada cliente que incorpores a través del programa de referidos.</p>
+        </div>
+      </div>
+
+      <div class="reveal text-center">
+        <a href="#waitlist" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-[#DBA27A]/30 text-[#DBA27A] hover:bg-[#DBA27A]/5 transition-all font-medium">
+          <span>Quiero ser partner</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
 
     <!-- ===== WAITLIST CTA ===== -->
     <section id="waitlist" class="px-6 py-36 relative">
